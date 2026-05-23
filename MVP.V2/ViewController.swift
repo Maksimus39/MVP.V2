@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  MVP.V2
-//
-//  Created by Максим Минаков on 22.05.2026.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

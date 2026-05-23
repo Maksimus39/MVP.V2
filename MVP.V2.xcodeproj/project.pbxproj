@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		857B6BE72FC21EAA00F1FE14 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 857B6BE62FC21EAA00F1FE14 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		855AF7252FC0C36600DD8EA1 /* MVP.V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857B6BE72FC21EAA00F1FE14 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = MVP.V2;
 			packageProductDependencies = (
+				857B6BE62FC21EAA00F1FE14 /* Alamofire */,
 			);
 			productName = MVP.V2;
 			productReference = 855AF7252FC0C36600DD8EA1 /* MVP.V2.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 855AF71C2FC0C36600DD8EA1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				857B6BE52FC21EAA00F1FE14 /* XCRemoteSwiftPackageReference "alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 855AF7262FC0C36600DD8EA1 /* Products */;
 			projectDirPath = "";
@@ -161,12 +170,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.yourMaksim.ourMinakov.MVP-V2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -193,12 +206,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.yourMaksim.ourMinakov.MVP-V2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -345,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		857B6BE52FC21EAA00F1FE14 /* XCRemoteSwiftPackageReference "alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alamofire/alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		857B6BE62FC21EAA00F1FE14 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 857B6BE52FC21EAA00F1FE14 /* XCRemoteSwiftPackageReference "alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 855AF71D2FC0C36600DD8EA1 /* Project object */;
 }
