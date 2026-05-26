@@ -1,59 +1,66 @@
+//import Foundation
+//
+//struct API {
+//    //static let baseURL = "https://jsonplaceholder.typicode.com"
+//    static let baseURL = "https://picsum.photos"
+//    
+//    enum Endpoint {
+//        case photos
+//        
+//        var path: String {
+//            switch self {
+//            case .photos:
+//                return "/photos"
+//            }
+//        }
+//        
+//        // endpoint
+//        func fullURL() -> String {
+//            return API.baseURL + path
+//        }
+//    }
+//    
+//    // model data
+//    struct PhotosResponse {
+//        let photos: [Photo]
+//    }
+//    
+//    struct Photo: Decodable {
+//        let albumId: Int
+//        let id: Int
+//        let title: String
+//        let url: String
+//        let thumbnailUrl: String
+//    }
+//}
+
+
 import Foundation
 
 struct API {
-    static let baseURL = "https://jsonplaceholder.typicode.com/"
+    static let baseURL = "https://picsum.photos"
     
     enum Endpoint {
-        case photos
+        case photos(page: Int = 1, limit: Int = 500)
         
         var path: String {
             switch self {
             case .photos:
-                return "photos"
+                return "/v2/list"
             }
         }
         
-        // endpoint
         func fullURL() -> String {
-            return API.baseURL + path
+            switch self {
+            case .photos(let page, let limit):
+                return API.baseURL + path + "?page=\(page)&limit=\(limit)"
+            }
         }
     }
     
-    // model data
-    typealias PhotosResponse = [Photo]
     struct Photo: Decodable {
-        let albumId: Int
-        let id: Int
-        let title: String
-        let url: String
-        let thumbnailUrl: String
+        let id: String
+        let author: String
+        let download_url: String
     }
 }
-
-// Использование:
-//let url = API.Endpoint.photos.fullURL()
-//let photo = API.Photo(...)
-
-
-// "https://jsonplaceholder.typicode.com/photos"
-//[
-//    {
-//    "albumId": 1,
-//    "id": 1,
-//    "title": "accusamus beatae ad facilis cum similique qui sunt",
-//    "url": "https://via.placeholder.com/600/92c952",
-//    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
-//}
-//]
-
-//// MARK: - Модель для одного элемента
-//struct Photo: Decodable {
-//    let albumId: Int
-//    let id: Int
-//    let title: String
-//    let url: String
-//    let thumbnailUrl: String
-//}
-//
-//// Ваш ответ от сервера - это массив, поэтому используем [Photo]
-//typealias PhotosResponse = [Photo]
