@@ -10,4 +10,11 @@ class Assembly {
         
         return vc
     }
+    
+    static func makeDetailsViewController(itemPhoto: API.Photo) -> UIViewController {
+        let vc = DetailsViewController()
+        let presenter = DetailsViewPresenter(itemPhoto: itemPhoto, view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
